@@ -56,5 +56,12 @@ public class RecordService {
         }
     }
 
+    public void saveRecord(String title) {
+        if (title != null && !title.isBlank()) {
+            User user = userService.getCurrentUser();
+            recordRepository.save(new Record(title, user));
+        }
+    }
+
 
 }
