@@ -62,6 +62,13 @@ public class RecordService {
             recordRepository.save(new Record(title, user));
         }
     }
+    public void updateRecordStatus(int id, RecordStatus newStatus) {
+        recordRepository.update(id, newStatus);
+    }
+
+    public void deleteRecord(int id) {
+        recordRepository.deleteById(id);
+    }
 
 
 }
